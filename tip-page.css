@@ -1,0 +1,335 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+h1 {
+    text-align: center;
+    color: #4a4a4a;
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+p {
+   font-size: larger;
+   font-weight: 500;
+   font-family: 'Roboto', sans-serif;
+}
+
+.search-container {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+#searchInput {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.technician-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    padding: 0 20px;
+    margin-top: 50px;
+}
+
+.instructions {
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.technician-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    cursor: pointer; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.technician-card:hover {
+    transform: translateY(-5px);
+}
+
+.technician-image {
+    width: 100%;
+    height: 180px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.technician-info {
+    padding: 1rem;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.technician-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0 0 10px 0;
+    color: #333;
+}
+
+.tip-button {
+    display: block;
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.tip-button:hover {
+    background-color: #45a049;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 1200px;
+    max-height: 80vh;
+    overflow-y: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    color: #aaa;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+.qr-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.qr-code {
+    text-align: center;
+}
+
+.qr-code img {
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+
+#backBtn, #settingsBtn {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#backBtn:hover, #settingsBtn:hover {
+    background-color: #2980b9;
+}
+
+#settingsBtn {
+    background-color: #ff9800;
+}
+
+#settingsBtn:hover {
+    background-color: #fb8c00;
+}
+
+#modalTechnicianName {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.keypad-btn {
+    font-size: 20px;
+    padding: 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.keypad-btn:hover {
+    background-color: #45a049;
+}
+
+input#accessCode {
+    width: 60%;
+    font-size: 24px;
+    padding: 10px;
+    margin-top: 10px;
+    text-align: center;
+    letter-spacing: 8px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+}
+
+.btn {
+    font-size: 16px;
+    padding: 10px 20px;
+    margin: 10px 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #45a049;
+}
+
+.btn-secondary {
+    background-color: #f44336;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #e53935;
+}
+
+#tap-tech {
+    position: fixed;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    left: 50%;
+    top: 3%;
+}
+
+
+/* Responsive design */
+@media (max-width: 1200px) {
+    .technician-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .technician-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .technician-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    #backBtn, #settingsBtn {
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .technician-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .modal-content {
+        width: 90%;
+    }
+    
+    .qr-code img {
+        width: 150px;
+        height: 150px;
+    }
+}
